@@ -342,84 +342,400 @@
             </div>
         </section>
 
-        <section id="services" class="py-24 bg-gray-50 border-t border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <h2 class="text-base font-bold uppercase tracking-widest text-takediOrange">Our Capabilities</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Professional Signage & Production Printing Services</p>
-                    <div class="w-16 h-1 bg-takediBlue mx-auto mt-4"></div>
+        <!-- ===== SERVICES SECTION (Redesigned) ===== -->
+        <section id="services" class="svc-section">
+            <!-- Decorative background blobs -->
+            <div class="svc-blob svc-blob--tl" aria-hidden="true"></div>
+            <div class="svc-blob svc-blob--br" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 position-relative" style="position:relative;z-index:1;">
+
+                <!-- Section header -->
+                <div class="svc-header">
+                    <span class="svc-eyebrow">Our Capabilities</span>
+                    <h2 class="svc-title">Professional Signage &amp;<br class="hidden sm:block"> Production Printing Services</h2>
+                    <p class="svc-subtitle">From large-format prints to full vehicle wraps — we bring your brand to life at every scale.</p>
+                    <div class="svc-rule" aria-hidden="true"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/Qxs5Fh9S/PVC.jpg" alt="Large Format Printing Banner Production" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Large Format Printing</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">High definition canvas, banners, architectural prints, and custom solutions.</p>
+                <!-- 10-service grid: 5 cols desktop / 3 tablet / 2 phablet / 1 mobile -->
+                <div class="svc-grid" id="svcGrid">
+
+                    <!-- 1. Large Format Printing -->
+                    <div class="svc-card" data-delay="0">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                                <line x1="12" y1="12" x2="12" y2="16"/>
+                                <line x1="10" y1="14" x2="14" y2="14"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Large Format<br>Printing</h3>
+                        <p class="svc-desc">High-definition banners, canvas, and architectural prints produced at any dimension you need.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/Jh9HMLCt/chromadek.jpg" alt="Industrial Signage Boards Layout Frame Setup" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Signage Boards</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Rigid industrial exterior and indoor corporate display structures.</p>
+                    <!-- 2. Signage Boards -->
+                    <div class="svc-card" data-delay="60">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Signage<br>Boards</h3>
+                        <p class="svc-desc">Durable steel and composite boards engineered for bold indoor and outdoor brand visibility.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/Ghxcp1Gc/fleet.jpg" alt="Commercial Fleet Sticker Management Application" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Fleet Stickers</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Weather-tested decals optimized for long lasting commercial fleet distribution.</p>
+                    <!-- 3. Mine Signage -->
+                    <div class="svc-card" data-delay="120">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                <line x1="12" y1="9" x2="12" y2="13"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Mine Signage<br>Reflective &amp; Non</h3>
+                        <p class="svc-desc">Safety-compliant mine signage in both reflective and non-reflective grades for hazardous environments.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/3xNkGRK3/car-barnding.jpg" alt="Premium Automobile Commercial Full Graphics Vehicle Branding Wrap" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Vehicle Branding</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Full wraps or partial identity configurations for sedans, hatchbacks, and utility vans.</p>
+                    <!-- 4. Fleet Stickers -->
+                    <div class="svc-card" data-delay="180">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                                <path d="M16 8h4l3 3v3h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Fleet<br>Stickers</h3>
+                        <p class="svc-desc">UV-resistant decals precisely cut and colour-matched for consistent branding across your entire fleet.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/DfQ4kHjy/shop-branding.jpg" alt="Retail Frontage Retail Shop Storefront Branding Presentation" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Shop Branding</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Strategic graphics design setups for physical storefront windows and walls.</p>
+                    <!-- 5. Wallpaper -->
+                    <div class="svc-card" data-delay="240">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18"/>
+                                <path d="M3 15h18"/>
+                                <path d="M9 3v18"/>
+                                <path d="M15 3v18"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Wallpaper</h3>
+                        <p class="svc-desc">Custom printed feature wallpaper that transforms offices, retail spaces, and reception areas with impact.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/C54RGnB5/wall.jpg" alt="Corporate Press Conference Event Wall Banner Backdrop Setup" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Wall Banner</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Expansive backgrounds for events, retail visual statements, and business showrooms.</p>
+                    <!-- 6. Vehicle Branding -->
+                    <div class="svc-card" data-delay="300">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5a2 2 0 0 1-2 2h-2"/>
+                                <circle cx="9" cy="17" r="2"/>
+                                <circle cx="17" cy="17" r="2"/>
+                                <path d="M14 3v4h5"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Vehicle<br>Branding</h3>
+                        <p class="svc-desc">Full wraps and partial liveries for sedans, vans, and trucks — your brand rolling down every road.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/V6nrNVzD/gazebo.jpg" alt="Outdoor Pop-Up Gazebo Canopy Unit Display Branding" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Gazebo</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Heavy-duty pop-up outdoor promotional structures optimized for corporate event setups.</p>
+                    <!-- 7. Shop Branding -->
+                    <div class="svc-card" data-delay="360">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Shop<br>Branding</h3>
+                        <p class="svc-desc">End-to-end storefront graphics — windows, fascia, and interior vinyl — that make your shop unmissable.</p>
                     </div>
 
-                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                        <img src="https://i.postimg.cc/XJBjNGkY/pull-up.jpg" alt="Retractable Display Corporate Pull Up Banner Stand Mechanism" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
-                            <h3 class="text-xl font-bold text-white tracking-wide">Pull Up Banner</h3>
-                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Highly mobile commercial retractable banner solutions for interior exhibitions.</p>
+                    <!-- 8. Wall Banner -->
+                    <div class="svc-card" data-delay="420">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="4" y1="4" x2="20" y2="4"/>
+                                <rect x="4" y="6" width="16" height="12" rx="1"/>
+                                <line x1="8" y1="18" x2="8" y2="22"/>
+                                <line x1="16" y1="18" x2="16" y2="22"/>
+                                <line x1="6" y1="22" x2="10" y2="22"/>
+                                <line x1="14" y1="22" x2="18" y2="22"/>
+                            </svg>
                         </div>
+                        <h3 class="svc-name">Wall<br>Banner</h3>
+                        <p class="svc-desc">Oversized printed backdrops that command attention at events, exhibitions, and corporate launches.</p>
                     </div>
 
+                    <!-- 9. Gazebo -->
+                    <div class="svc-card" data-delay="480">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M2 20h20"/>
+                                <path d="M12 4L2 14h20L12 4z"/>
+                                <line x1="6" y1="14" x2="6" y2="20"/>
+                                <line x1="18" y1="14" x2="18" y2="20"/>
+                                <line x1="12" y1="14" x2="12" y2="20"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-name">Gazebo</h3>
+                        <p class="svc-desc">Heavy-duty branded pop-up canopies built for outdoor activations, trade shows, and markets.</p>
+                    </div>
+
+                    <!-- 10. Pull-Up Banner -->
+                    <div class="svc-card" data-delay="540">
+                        <div class="svc-icon-ring">
+                            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="9" y="2" width="6" height="16" rx="1"/>
+                                <line x1="12" y1="18" x2="12" y2="22"/>
+                                <ellipse cx="12" cy="22" rx="4" ry="1"/>
+                                <line x1="9" y1="7" x2="15" y2="7"/>
+                                <line x1="9" y1="10" x2="15" y2="10"/>
+                                <line x1="9" y1="13" x2="13" y2="13"/>
+                            </svg>
+                        </div>
+                        <h3 class="svc-name">Pull-Up<br>Banner</h3>
+                        <p class="svc-desc">Portable retractable display stands that deploy in seconds — perfect for any indoor exhibition or showroom.</p>
+                    </div>
+
+                </div><!-- /svc-grid -->
+
+                <!-- CTA pill -->
+                <div class="svc-cta-row">
+                    <a href="#pricing" class="svc-cta-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        View Our Pricing Catalog
+                    </a>
                 </div>
+
             </div>
         </section>
+
+        <style>
+        /* ===========================
+           SERVICES SECTION — STYLES
+        =========================== */
+        .svc-section {
+            position: relative;
+            padding: 100px 0 110px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Soft ambient blobs */
+        .svc-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .svc-blob--tl {
+            width: 480px; height: 480px;
+            top: -120px; left: -160px;
+            background: rgba(22, 101, 52, 0.07);
+        }
+        .svc-blob--br {
+            width: 520px; height: 520px;
+            bottom: -180px; right: -180px;
+            background: rgba(22, 101, 52, 0.06);
+        }
+
+        /* Header */
+        .svc-header {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto 68px;
+        }
+        .svc-eyebrow {
+            display: inline-block;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #16a34a;
+            background: rgba(22, 163, 74, 0.09);
+            padding: 5px 14px;
+            border-radius: 9999px;
+            border: 1px solid rgba(22, 163, 74, 0.22);
+            margin-bottom: 18px;
+        }
+        .svc-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.025em;
+            line-height: 1.18;
+            margin-bottom: 14px;
+        }
+        .svc-subtitle {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.975rem;
+            color: #64748b;
+            font-weight: 400;
+            line-height: 1.65;
+            margin-bottom: 22px;
+        }
+        .svc-rule {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, #16a34a 0%, #4ade80 100%);
+            border-radius: 9999px;
+            margin: 0 auto;
+        }
+
+        /* Grid */
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 1200px) {
+            .svc-grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+        }
+        @media (max-width: 960px) {
+            .svc-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        }
+        @media (max-width: 600px) {
+            .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        }
+        @media (max-width: 380px) {
+            .svc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Card */
+        .svc-card {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 20px;
+            padding: 28px 20px 26px;
+            text-align: center;
+            cursor: default;
+            /* Glass-soft shadow */
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05), 0 0 0 1px rgba(22,163,74,0.0);
+            transition:
+                transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                border-color 0.28s ease;
+            /* Start hidden for reveal animation */
+            opacity: 0;
+            transform: translateY(22px);
+        }
+        .svc-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .svc-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow:
+                0 16px 40px rgba(22, 163, 74, 0.13),
+                0 4px 14px rgba(0,0,0,0.07),
+                0 0 0 1.5px rgba(22,163,74,0.18);
+            border-color: rgba(22,163,74,0.25);
+        }
+
+        /* Icon ring */
+        .svc-icon-ring {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+            margin: 0 auto 18px;
+            box-shadow: 0 6px 20px rgba(22,101,52,0.32);
+            transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease;
+        }
+        .svc-card:hover .svc-icon-ring {
+            transform: scale(1.12) rotate(-4deg);
+            box-shadow: 0 10px 28px rgba(22,101,52,0.42);
+        }
+        .svc-icon {
+            width: 26px;
+            height: 26px;
+            color: #ffffff;
+            stroke: #ffffff;
+        }
+
+        /* Service name */
+        .svc-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #0f172a;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        /* Description */
+        .svc-desc {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.77rem;
+            font-weight: 400;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* CTA row */
+        .svc-cta-row {
+            text-align: center;
+            margin-top: 52px;
+        }
+        .svc-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            border-radius: 9999px;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(22,101,52,0.35);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+        }
+        .svc-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(22,101,52,0.45);
+            background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+        }
+        </style>
+
+        <script>
+        /* Staggered scroll-reveal for service cards */
+        (function() {
+            var cards = document.querySelectorAll('#svcGrid .svc-card');
+            if (!cards.length) return;
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var card = entry.target;
+                        var delay = parseInt(card.getAttribute('data-delay') || 0, 10);
+                        setTimeout(function() {
+                            card.classList.add('is-visible');
+                        }, delay);
+                        observer.unobserve(card);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            cards.forEach(function(card) { observer.observe(card); });
+        })();
+        </script>
 
         <section id="pricing" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
