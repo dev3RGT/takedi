@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKEDI | Modern Printers & Supply</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        takediBlue: '#0f5da6',
+                        takediOrange: '#f37022',
+                        takediLightOrange: '#ffb600'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS overrides and custom hover glow states */
+        .glow-blue:hover {
+            box-shadow: 0 0 25px rgba(15, 93, 166, 0.4);
+            transition: all 0.4s ease-in-out;
+        }
+        .glow-orange:hover {
+            box-shadow: 0 0 25px rgba(243, 112, 34, 0.4);
+            transition: all 0.4s ease-in-out;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Pricing layout configuration to ensure perfect vertical alignment */
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex flex-col justify-center">
+                    <span class="text-3xl font-extrabold tracking-tight text-takediBlue flex items-baseline">
+                        TAKED<span class="text-takediOrange relative">I<span class="absolute -top-1 left-[2px] w-2 h-2 bg-takediOrange rounded-full"></span></span>
+                    </span>
+                    <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-takediOrange -mt-1">
+                        Modern Printers & Supply
+                    </span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
+                    <a href="#home" class="text-takediBlue hover:text-takediOrange transition-colors">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-takediBlue transition-colors">Services</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-takediBlue transition-colors">Pricing Catalog</a>
+                    <a href="#contact" class="text-gray-600 hover:text-takediBlue transition-colors">Contact Us</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <a href="tel:0607118356" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-takediBlue hover:bg-takediBlue/90 transition-all shadow-md tracking-wider">
+                        <i class="fa-solid fa-phone mr-2"></i> 060 711 8356
+                    </a>
+                </div>
+
+                <div class="flex md:hidden">
+                    <button type="button" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-takediBlue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-takediBlue">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-takediBlue">Services</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-takediBlue">Pricing Catalog</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-takediBlue">Contact Us</a>
+            <a href="tel:0607118356" class="block w-full text-center px-4 py-3 text-base font-bold text-white bg-takediBlue">
+                <i class="fa-solid fa-phone mr-2"></i> Call Now
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative bg-white overflow-hidden min-h-[calc(100vh-5rem)] flex items-center">
+            <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="md:col-span-6 space-y-6 lg:pr-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 text-takediBlue font-semibold text-xs tracking-wider uppercase">
+                            <span class="w-2 h-2 rounded-full bg-takediOrange animate-pulse"></span> Premium Branding Solutions
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-none">
+                            High-Impact Design,<br>
+                            <span class="text-takediBlue">Print & Branding</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 font-medium max-w-lg leading-relaxed">
+                            Transform your corporate and enterprise image with TAKEDI. From large format printing and vehicle wraps to modern custom business signage, we produce professional outputs tailored to elevate your business presence.
+                        </p>
+                        <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                            <a href="#pricing" class="inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-takediOrange hover:bg-takediOrange/90 transition-all shadow-lg tracking-wide text-center">
+                                View Our Pricing
+                            </a>
+                            <a href="#services" class="inline-flex items-center justify-center px-8 py-4 font-bold text-takediBlue border-2 border-takediBlue hover:bg-takediBlue/5 transition-all tracking-wide text-center">
+                                Explore Services
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-6 relative w-full h-[350px] sm:h-[450px] lg:h-[550px]">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-takediBlue/10 to-transparent z-10 pointer-events-none"></div>
+                        <img src="https://i.postimg.cc/dQGrQL0N/outdoor.jpg" alt="TAKEDI Premium Outdoor Promotional Signage Branding Displays" class="w-full h-full object-cover object-center shadow-2xl border border-gray-100">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 bg-gray-50 border-t border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-base font-bold uppercase tracking-widest text-takediOrange">Our Capabilities</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Professional Signage & Production Printing Services</p>
+                    <div class="w-16 h-1 bg-takediBlue mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/Qxs5Fh9S/PVC.jpg" alt="Large Format Printing Banner Production" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Large Format Printing</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">High definition canvas, banners, architectural prints, and custom solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/Jh9HMLCt/chromadek.jpg" alt="Industrial Signage Boards Layout Frame Setup" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Signage Boards</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Rigid industrial exterior and indoor corporate display structures.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/Ghxcp1Gc/fleet.jpg" alt="Commercial Fleet Sticker Management Application" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Fleet Stickers</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Weather-tested decals optimized for long lasting commercial fleet distribution.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/3xNkGRK3/car-barnding.jpg" alt="Premium Automobile Commercial Full Graphics Vehicle Branding Wrap" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Vehicle Branding</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Full wraps or partial identity configurations for sedans, hatchbacks, and utility vans.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/DfQ4kHjy/shop-branding.jpg" alt="Retail Frontage Retail Shop Storefront Branding Presentation" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Shop Branding</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Strategic graphics design setups for physical storefront windows and walls.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/C54RGnB5/wall.jpg" alt="Corporate Press Conference Event Wall Banner Backdrop Setup" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Wall Banner</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Expansive backgrounds for events, retail visual statements, and business showrooms.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/V6nrNVzD/gazebo.jpg" alt="Outdoor Pop-Up Gazebo Canopy Unit Display Branding" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Gazebo</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Heavy-duty pop-up outdoor promotional structures optimized for corporate event setups.</p>
+                        </div>
+                    </div>
+
+                    <div class="group relative aspect-square bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                        <img src="https://i.postimg.cc/XJBjNGkY/pull-up.jpg" alt="Retractable Display Corporate Pull Up Banner Stand Mechanism" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+                            <h3 class="text-xl font-bold text-white tracking-wide">Pull Up Banner</h3>
+                            <p class="text-gray-300 text-xs mt-1 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300">Highly mobile commercial retractable banner solutions for interior exhibitions.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-3">
+                    <h2 class="text-base font-bold uppercase tracking-widest text-takediBlue">Product Catalog</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Commercial Standard Rates & Pricing Packages</p>
+                    <div class="w-16 h-1 bg-takediOrange mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-blue transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/Jh9HMLCt/chromadek.jpg" alt="Chromadek Industrial Sheet Boards" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediBlue text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Industrial Signage</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">CHROMADEK BOARDS</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">Premium weather-resistant galvanized steel substrate framing systems.</p>
+                                
+                                <div class="mt-6 space-y-4">
+                                    <div class="border-b border-gray-100 pb-3">
+                                        <p class="font-bold text-sm text-gray-800">Small <span class="text-gray-400 font-normal">(1225x600mm)</span></p>
+                                        <div class="flex justify-between text-xs mt-1 font-semibold text-gray-600">
+                                            <span>Single Side: <strong class="text-takediBlue text-sm">R1300</strong></span>
+                                            <span>Double Side: <strong class="text-takediBlue text-sm">R1800</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="border-b border-gray-100 pb-3">
+                                        <p class="font-bold text-sm text-gray-800">Square <span class="text-gray-400 font-normal">(1225x1225mm)</span></p>
+                                        <div class="flex justify-between text-xs mt-1 font-semibold text-gray-600">
+                                            <span>Single Side: <strong class="text-takediBlue text-sm">R2000</strong></span>
+                                            <span>Double Side: <strong class="text-takediBlue text-sm">R2800</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="border-b border-gray-100 pb-3">
+                                        <p class="font-bold text-sm text-gray-800">Medium <span class="text-gray-400 font-normal">(1850x925mm)</span></p>
+                                        <div class="flex justify-between text-xs mt-1 font-semibold text-gray-600">
+                                            <span>Single Side: <strong class="text-takediBlue text-sm">R3000</strong></span>
+                                            <span>Double Side: <strong class="text-takediBlue text-sm">R4400</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="border-b border-gray-100 pb-3">
+                                        <p class="font-bold text-sm text-gray-800">Large <span class="text-gray-400 font-normal">(2450x1225mm)</span></p>
+                                        <div class="flex justify-between text-xs mt-1 font-semibold text-gray-600">
+                                            <span>Single Side: <strong class="text-takediBlue text-sm">R4000</strong></span>
+                                            <span>Double Side: <strong class="text-takediBlue text-sm">R5500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="pb-2">
+                                        <p class="font-bold text-sm text-gray-800">Extra Large <span class="text-gray-400 font-normal">(3000x1225mm)</span></p>
+                                        <div class="flex justify-between text-xs mt-1 font-semibold text-gray-600">
+                                            <span>Single Side: <strong class="text-takediBlue text-sm">R4800</strong></span>
+                                            <span>Double Side: <strong class="text-takediBlue text-sm">R7000</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Prices include Graphic Design, Printing & Steel Frames.<br>
+                                *Poles included for Medium, Large & Extra Large options only.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-orange transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/MGcfCG4N/A-Frame.jpg" alt="A Frame Metal Portable Sidewalk Display Boards" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediOrange text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Portable Displays</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">A FRAME BOARDS</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">Double-sided portable metal sandwich tracking signage pavement structures.</p>
+                                
+                                <div class="mt-6 space-y-4">
+                                    <h4 class="text-xs font-bold text-takediOrange tracking-widest uppercase border-b border-gray-100 pb-1">Board Dimensions</h4>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+                                        <span>A2 Size <span class="text-xs text-gray-400 font-normal">(420x594mm)</span></span>
+                                        <span class="text-takediOrange text-base font-bold">R1000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+                                        <span>A1 Size <span class="text-xs text-gray-400 font-normal">(594x841mm)</span></span>
+                                        <span class="text-takediOrange text-base font-bold">R1750</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700 border-b border-gray-100 pb-4">
+                                        <span>A0 Size <span class="text-xs text-gray-400 font-normal">(841x1189mm)</span></span>
+                                        <span class="text-takediOrange text-base font-bold">R2500</span>
+                                    </div>
+
+                                    <h4 class="text-xs font-bold text-takediOrange tracking-widest uppercase pt-2">ABS Plastic Signage Extra Options</h4>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+                                        <span>300x300mm Standard Panel</span>
+                                        <span class="text-gray-900 font-bold">R45</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+                                        <span>250x250mm Compact Panel</span>
+                                        <span class="text-gray-900 font-bold">R30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Prices include Graphic Design, Printing & Commercial Fabrication processes.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-blue transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/Cxxq474Y/window-brand.jpg" alt="Commercial Corporate Window Frost and Vinyl Film Decal Installation" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediBlue text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Office & Retail</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">WINDOW & WALL BRANDING</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">Custom printed architectural vinyl graphics optimized for office glass interiors.</p>
+                                
+                                <div class="mt-6 space-y-3">
+                                    <div class="text-[11px] text-gray-400 font-bold uppercase tracking-wider flex justify-between border-b border-gray-100 pb-1">
+                                        <span>Media Style (Per 1200x1000mm)</span>
+                                        <div class="space-x-4"><span>Print</span> <span>Install</span></div>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 py-1 border-b border-gray-50">
+                                        <span>Window Decals</span>
+                                        <span class="font-bold text-gray-900">R250 <span class="text-gray-300 mx-1">|</span> R70</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 py-1 border-b border-gray-50">
+                                        <span>Contavision (One-Way Vision)</span>
+                                        <span class="font-bold text-gray-900">R300 <span class="text-gray-300 mx-1">|</span> R75</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 py-1 border-b border-gray-50">
+                                        <span>Window Frost (Sandblast effect)</span>
+                                        <span class="font-bold text-gray-900">R350 <span class="text-gray-300 mx-1">|</span> R80</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 py-1 border-b border-gray-50">
+                                        <span>Custom Texture Wallpaper</span>
+                                        <span class="font-bold text-gray-900">R350 <span class="text-gray-300 mx-1">|</span> R80</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 py-1">
+                                        <span>Premium Vinyl Sticker Roll</span>
+                                        <span class="font-bold text-gray-900">R300 <span class="text-gray-300 mx-1">|</span> R80</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Custom External Layout Graphic Design Setup Fee: R350 flat rate.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-orange transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/dQGrQL0N/outdoor.jpg" alt="Corporate Promotional Outdoor Flags and Heavy Duty Tents Event Kit" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediOrange text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Event Solutions</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">OUTDOOR PROMOTIONS</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">High exposure event kits optimized to protect against external elements.</p>
+                                
+                                <div class="mt-6 space-y-3.5">
+                                    <div class="flex justify-between items-start text-xs font-semibold text-gray-700">
+                                        <div class="flex flex-col">
+                                            <span>3m Telescopic Flag (Set of 2)</span>
+                                            <span class="text-[10px] text-gray-400 font-normal">700x3000mm - Single Sided</span>
+                                        </div>
+                                        <span class="text-takediOrange font-bold text-sm">R2700</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700">
+                                        <span>Wall Banner Backdrop <span class="text-[10px] text-gray-400 font-normal">(3000x2250mm)</span></span>
+                                        <span class="text-takediOrange font-bold text-sm">R4500</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700 border-b border-gray-100 pb-3">
+                                        <span>Heavy-Duty Gazebo Tent <span class="text-[10px] text-gray-400 font-normal">(3000x3000mm)</span></span>
+                                        <span class="text-takediOrange font-bold text-sm">R6500</span>
+                                    </div>
+                                    
+                                    <h4 class="text-[11px] font-bold text-gray-400 uppercase tracking-wider pt-1">Premium Canvas Art Blocks</h4>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700">
+                                        <span>Canvas Size A2 <span class="text-[10px] text-gray-400 font-normal">(420x595mm)</span></span>
+                                        <span class="text-gray-900 font-bold">R375</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700">
+                                        <span>Canvas Size A1 <span class="text-[10px] text-gray-400 font-normal">(595x841mm)</span></span>
+                                        <span class="text-gray-900 font-bold">R750</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs font-semibold text-gray-700">
+                                        <span>Canvas Size A0 <span class="text-[10px] text-gray-400 font-normal">(841x1189mm)</span></span>
+                                        <span class="text-gray-900 font-bold">R1500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Prices Include Full Corporate Graphic Design, Printing & Fabrication processes.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-blue transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/Qxs5Fh9S/PVC.jpg" alt="PVC Flexible Heavy Duty Matte Signage Banners" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediBlue text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Flexible PVC Banners</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">PVC VINYL BANNERS</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">High tension non-fade reinforced commercial PVC media prints.</p>
+                                
+                                <div class="mt-6 space-y-4">
+                                    <div class="flex justify-between items-start text-sm font-semibold text-gray-700 border-b border-gray-50 pb-2">
+                                        <div class="flex flex-col">
+                                            <span>X-Banner Stand Set</span>
+                                            <span class="text-xs text-gray-400 font-normal">700x1600mm + Structural Core</span>
+                                        </div>
+                                        <span class="text-takediBlue text-base font-bold">R750</span>
+                                    </div>
+                                    <div class="flex justify-between items-start text-sm font-semibold text-gray-700 border-b border-gray-50 pb-2">
+                                        <div class="flex flex-col">
+                                            <span>Pull Up Banner Econo</span>
+                                            <span class="text-xs text-gray-400 font-normal">850x2000mm Lightweight Profile</span>
+                                        </div>
+                                        <span class="text-takediBlue text-base font-bold">R1200</span>
+                                    </div>
+                                    <div class="flex justify-between items-start text-sm font-semibold text-gray-700 border-b border-gray-50 pb-2">
+                                        <div class="flex flex-col">
+                                            <span>Pull Up Banner Executive</span>
+                                            <span class="text-xs text-gray-400 font-normal">850x2000mm Solid Luxury Base</span>
+                                        </div>
+                                        <span class="text-takediBlue text-base font-bold">R1500</span>
+                                    </div>
+                                    <div class="flex justify-between items-start text-sm font-semibold text-gray-700">
+                                        <div class="flex flex-col">
+                                            <span>Fence Outer Banner</span>
+                                            <span class="text-xs text-gray-400 font-normal">1000x1200mm Eyelets Configuration</span>
+                                        </div>
+                                        <span class="text-takediBlue text-base font-bold">R350</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Reinforced edge eyelets and high tension matte finishes included by default.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-none border border-gray-200 bg-white glow-orange transition-all duration-300 flex flex-col h-full">
+                        <div>
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-gray-50">
+                                <img src="https://i.postimg.cc/3xNkGRK3/car-barnding.jpg" alt="Commercial Fleet Vehicle Graphics Vehicle Branding" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-takediOrange text-white font-bold text-xs uppercase px-3 py-1 tracking-wider">Mobile Marketing</div>
+                            </div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight">VEHICLE BRANDING</h3>
+                                <p class="text-xs text-gray-500 mt-1 font-medium">Contoured high performance cast wrap vinyl configurations.</p>
+                                
+                                <div class="mt-6 space-y-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700 border-b border-gray-50 pb-1">
+                                        <span>Car Branding Hatchback</span>
+                                        <span class="text-takediOrange text-base font-bold">R3000</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700 border-b border-gray-50 pb-1">
+                                        <span>Light Utility Bakkie</span>
+                                        <span class="text-takediOrange text-base font-bold">R3200</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700 border-b border-gray-50 pb-1">
+                                        <span>Standard Sedan Body</span>
+                                        <span class="text-takediOrange text-base font-bold">R3500</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700 border-b border-gray-50 pb-1">
+                                        <span>Commercial Panel Van</span>
+                                        <span class="text-takediOrange text-base font-bold">R3800</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+                                        <span>Full Size Double Cab Bakkie</span>
+                                        <span class="text-takediOrange text-base font-bold">R4000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 mt-auto">
+                            <blockquote class="text-[11px] leading-relaxed text-gray-500 font-medium italic">
+                                *Uses weather stable UV-protective laminate coatings for high mileage fleet endurance.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-gray-50 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                    
+                    <div class="lg:col-span-5 bg-white p-8 sm:p-10 border border-gray-200 flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <div>
+                                <h2 class="text-base font-bold uppercase tracking-widest text-takediOrange">Get In Touch</h2>
+                                <h3 class="text-3xl font-extrabold tracking-tight text-gray-900 mt-1">Let's Discuss Your Branding Strategy</h3>
+                                <div class="w-12 h-1 bg-takediBlue mt-4"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Reach out directly via phone or email to initiate bulk enterprise ordering processes or ask custom print setup dimension design queries.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-takediBlue/10 flex items-center justify-center text-takediBlue">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Call Directly</h4>
+                                    <a href="tel:0607118356" class="text-base font-bold text-gray-900 hover:text-takediBlue transition-colors">060 711 8356</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-takediBlue/10 flex items-center justify-center text-takediBlue">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Inquiry Support</h4>
+                                    <a href="mailto:info@takedi.co.za" class="text-base font-bold text-gray-900 hover:text-takediBlue transition-colors">info@takedi.co.za</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-takediOrange/10 flex items-center justify-center text-takediOrange">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Headquarters Location</h4>
+                                    <p class="text-sm font-bold text-gray-900 leading-tight">
+                                        15 Nelson Mandela Drive, Mokopane, 0601
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-500 font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-clock text-takediOrange"></i> Mon - Fri: 08:00 - 17:00
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 min-h-[400px] bg-white border border-gray-200 relative p-2">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.2088!2d29.00685!3d-24.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6dbda272fa493%3A0x6fb0d28741eb0b9a!2s15%20Nelson%20Mandela%20Dr%2C%20Mokopane%2C%200601!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza" 
+                            class="w-full h-full border-0 min-h-[400px]"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 border-t-4 border-takediBlue pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <span class="text-3xl font-extrabold tracking-tight text-white flex items-baseline">
+                        TAKED<span class="text-takediOrange relative">I<span class="absolute -top-1 left-[2px] w-2 h-2 bg-takediOrange rounded-full"></span></span>
+                    </span>
+                    <p class="text-sm text-gray-400 font-medium max-w-sm leading-relaxed">
+                        TAKEDI (Modern Printers & Supply) is a full-scale digital design, custom commercial printing, and corporate branding firm based out of Mokopane.
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-none bg-gray-800 hover:bg-takediBlue text-white flex items-center justify-center transition-colors text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-none bg-gray-800 hover:bg-takediBlue text-white flex items-center justify-center transition-colors text-sm"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-none bg-gray-800 hover:bg-takediOrange text-white flex items-center justify-center transition-colors text-sm"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-takediOrange pl-2">Navigation Links</h4>
+                    <ul class="space-y-2 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-white transition-colors">Top Overview</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Our Services</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Rates & Packages</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Matrix</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-takediBlue pl-2">Corporate Identity Slogan</h4>
+                    <div class="bg-gray-800/50 p-4 border border-gray-800">
+                        <p class="text-takediOrange font-black text-lg italic tracking-wide">"Modern Printers & Supply"</p>
+                        <p class="text-[11px] text-gray-500 mt-1 uppercase font-semibold tracking-wider">Registered Digital Graphics Production & Fabrication Provider</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-medium text-gray-500 gap-4">
+                <p>&copy; 2026 TAKEDI. All Rights Reserved. Designed to Enterprise Print Standards.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Terms & Production Conditions</a>
+                    <a href="#" class="hover:underline">Privacy Framework Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
