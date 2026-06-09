@@ -52,6 +52,251 @@
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14), 0 8px 20px rgba(0, 0, 0, 0.08);
         }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Full-bleed background image — ultra-high-res, sharp, no scaling artifacts */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://i.postimg.cc/dQGrQL0N/outdoor.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            transform: scale(1.02); /* prevent edge-flash on scroll */
+            transition: transform 8s ease-out;
+            will-change: transform;
+        }
+
+        .hero-section:hover .hero-bg {
+            transform: scale(1.06);
+        }
+
+        /* Deep cinematic overlay — navy at top, near-black at bottom */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                160deg,
+                rgba(5, 25, 55, 0.72) 0%,
+                rgba(0, 0, 0, 0.55) 50%,
+                rgba(0, 0, 0, 0.78) 100%
+            );
+            z-index: 1;
+        }
+
+        /* Brand blue tint — low opacity stripe at bottom for continuity with rest of page */
+        .hero-tint {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 35%;
+            background: linear-gradient(
+                to top,
+                rgba(15, 93, 166, 0.30) 0%,
+                transparent 100%
+            );
+            z-index: 2;
+        }
+
+        /* Centered content stack */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            gap: 0;
+        }
+
+        /* Eyebrow badge */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(243, 112, 34, 0.18);
+            border: 1px solid rgba(243, 112, 34, 0.45);
+            color: #ffb600;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 1.4rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #f37022;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        /* Main headline */
+        .hero-headline {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+        }
+
+        .hero-headline-accent {
+            color: #f37022;
+            display: inline;
+        }
+
+        /* Sub copy */
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.82);
+            font-weight: 400;
+            line-height: 1.75;
+            max-width: 620px;
+            margin-bottom: 2.4rem;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+        }
+
+        /* CTA buttons row */
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2.8rem;
+        }
+
+        .hero-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.4rem;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: #f37022;
+            text-decoration: none;
+            border: 2px solid #f37022;
+            transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            box-shadow: 0 8px 32px rgba(243, 112, 34, 0.45);
+        }
+
+        .hero-btn-primary:hover {
+            background: #d95f10;
+            border-color: #d95f10;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(243, 112, 34, 0.55);
+        }
+
+        .hero-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.4rem;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: rgba(255,255,255,0.10);
+            border: 2px solid rgba(255,255,255,0.55);
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255,255,255,0.20);
+            border-color: rgba(255,255,255,0.90);
+            transform: translateY(-2px);
+        }
+
+        /* Trust bar */
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        .hero-trust-item i {
+            color: #ffb600;
+            font-size: 0.75rem;
+        }
+
+        .hero-trust-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Scroll indicator */
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-scroll-line {
+            width: 1.5px;
+            height: 48px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0));
+            animation: scroll-line 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-line {
+            0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+            50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+            100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            .hero-trust-divider { display: none; }
+            .hero-trust { gap: 0.8rem; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased">
@@ -96,37 +341,66 @@
     </header>
 
     <main>
-        <section id="home" class="relative bg-white overflow-hidden min-h-[calc(100vh-5rem)] flex items-center">
-            <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="md:col-span-6 space-y-6 lg:pr-4">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 text-takediBlue font-semibold text-xs tracking-wider uppercase">
-                            <span class="w-2 h-2 rounded-full bg-takediOrange animate-pulse"></span> Premium Branding Solutions
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-none">
-                            High-Impact Design,<br>
-                            <span class="text-takediBlue">Print & Branding</span>
-                        </h1>
-                        <p class="text-lg text-gray-600 font-medium max-w-lg leading-relaxed">
-                            Transform your corporate and enterprise image with TAKEDI. From large format printing and vehicle wraps to modern custom business signage, we produce professional outputs tailored to elevate your business presence.
-                        </p>
-                        <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                            <a href="#pricing" class="inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-takediOrange hover:bg-takediOrange/90 transition-all shadow-lg tracking-wide text-center">
-                                View Our Pricing
-                            </a>
-                            <a href="#services" class="inline-flex items-center justify-center px-8 py-4 font-bold text-takediBlue border-2 border-takediBlue hover:bg-takediBlue/5 transition-all tracking-wide text-center">
-                                Explore Services
-                            </a>
-                        </div>
-                    </div>
+        <!-- HERO: Full-viewport image fill with centered content -->
+        <section id="home" class="hero-section">
+            <!-- Background image layer -->
+            <div class="hero-bg"></div>
+            <!-- Multi-layer overlay for depth and legibility -->
+            <div class="hero-overlay"></div>
+            <!-- Subtle blue brand tint at bottom -->
+            <div class="hero-tint"></div>
 
-                    <div class="md:col-span-6 relative w-full h-[350px] sm:h-[450px] lg:h-[550px]">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-takediBlue/10 to-transparent z-10 pointer-events-none"></div>
-                        <img src="https://i.postimg.cc/dQGrQL0N/outdoor.jpg" alt="TAKEDI Premium Outdoor Promotional Signage Branding Displays" class="w-full h-full object-cover object-center shadow-2xl border border-gray-100">
-                    </div>
-
+            <!-- Centered content -->
+            <div class="hero-content">
+                <!-- Eyebrow badge -->
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Premium Branding Solutions
                 </div>
+
+                <!-- Headline -->
+                <h1 class="hero-headline">
+                    High-Impact Design,<br>
+                    <span class="hero-headline-accent">Print &amp; Branding</span>
+                </h1>
+
+                <!-- Sub-copy -->
+                <p class="hero-sub">
+                    Transform your corporate image with TAKEDI — from large format printing and vehicle wraps to custom business signage, precision-crafted to elevate your brand.
+                </p>
+
+                <!-- CTA buttons -->
+                <div class="hero-ctas">
+                    <a href="#pricing" class="hero-btn-primary">
+                        View Our Pricing
+                    </a>
+                    <a href="#services" class="hero-btn-secondary">
+                        Explore Services
+                    </a>
+                </div>
+
+                <!-- Trust bar -->
+                <div class="hero-trust">
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Quality Guaranteed</span>
+                    </div>
+                    <div class="hero-trust-divider"></div>
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Fast Turnaround</span>
+                    </div>
+                    <div class="hero-trust-divider"></div>
+                    <div class="hero-trust-item">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>Mokopane, Limpopo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="hero-scroll-hint">
+                <div class="hero-scroll-line"></div>
             </div>
         </section>
 
