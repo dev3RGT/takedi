@@ -53,114 +53,73 @@
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14), 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO SECTION — SPLIT LAYOUT ===== */
         .hero-section {
             position: relative;
             width: 100%;
-            height: 100vh;
-            min-height: 680px;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: stretch;
             overflow: hidden;
         }
 
-        /* Full-bleed background image — ultra-high-res, sharp, no scaling artifacts */
-        .hero-bg {
+        /* Left panel — deep navy/dark content side */
+        .hero-left {
+            position: relative;
+            z-index: 10;
+            width: 52%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 64px 80px 60px;
+            background: linear-gradient(135deg, #051937 0%, #0a2d5e 55%, #0f5da6 100%);
+        }
+
+        /* Subtle texture overlay on left */
+        .hero-left::before {
+            content: '';
             position: absolute;
             inset: 0;
-            background-image: url('https://i.postimg.cc/dQGrQL0N/outdoor.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            background: radial-gradient(ellipse at 80% 50%, rgba(243,112,34,0.12) 0%, transparent 65%);
+            pointer-events: none;
         }
 
-        .hero-section:hover .hero-bg {
-            transform: none;
+        /* Right panel — full image fill */
+        .hero-right {
+            position: relative;
+            width: 48%;
+            overflow: hidden;
         }
 
-        /* Deep cinematic overlay — navy at top, near-black at bottom */
-        .hero-overlay {
+        .hero-right-img {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                160deg,
-                rgba(5, 25, 55, 0.72) 0%,
-                rgba(0, 0, 0, 0.55) 50%,
-                rgba(0, 0, 0, 0.78) 100%
-            );
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
         }
 
-        /* Brand blue tint — low opacity stripe at bottom for continuity with rest of page */
-        .hero-tint {
+        /* Fade from left panel into image */
+        .hero-right::before {
+            content: '';
             position: absolute;
-            bottom: 0;
+            inset: 0;
             left: 0;
-            right: 0;
-            height: 35%;
-            background: linear-gradient(
-                to top,
-                rgba(15, 93, 166, 0.30) 0%,
-                transparent 100%
-            );
+            width: 80px;
+            background: linear-gradient(to right, #0a2d5e, transparent);
             z-index: 2;
         }
 
-        /* Centered content stack */
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0 1.5rem;
-            max-width: 900px;
-            width: 100%;
-            gap: 0;
-        }
-
-        /* Eyebrow badge */
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: rgba(243, 112, 34, 0.18);
-            border: 1px solid rgba(243, 112, 34, 0.45);
-            color: #ffb600;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            margin-bottom: 1.4rem;
-            backdrop-filter: blur(4px);
-        }
-
-        .hero-badge-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #f37022;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.4); }
-        }
-
-        /* Main headline */
+        /* Headline */
         .hero-headline {
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-size: clamp(2.6rem, 4.5vw, 4.4rem);
             font-weight: 900;
             line-height: 1.05;
             color: #ffffff;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+            letter-spacing: -0.025em;
+            margin-bottom: 1.4rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
 
         .hero-headline-accent {
@@ -168,13 +127,21 @@
             display: inline;
         }
 
+        .hero-tagline {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.65;
+            margin-bottom: 2.4rem;
+            max-width: 420px;
+        }
+
         /* CTA buttons row */
         .hero-ctas {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
+            justify-content: flex-start;
         }
 
         .hero-btn-primary {
@@ -211,7 +178,7 @@
             letter-spacing: 0.08em;
             color: #ffffff;
             background: rgba(255,255,255,0.10);
-            border: 2px solid rgba(255,255,255,0.55);
+            border: 2px solid rgba(255,255,255,0.45);
             border-radius: 9999px;
             text-decoration: none;
             backdrop-filter: blur(6px);
@@ -224,29 +191,58 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile & tablet image optimisation */
-        @media (max-width: 1024px) {
-            .hero-bg {
-                background-position: center top;
-            }
+        /* Stats row at bottom of left panel */
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
         }
 
-        @media (max-width: 768px) {
+        .hero-stat-value {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #f37022;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        /* Mobile: stack vertically */
+        @media (max-width: 900px) {
             .hero-section {
-                min-height: 100svh;
+                flex-direction: column;
+                min-height: auto;
             }
-            .hero-bg {
-                background-position: 60% center;
+            .hero-left {
+                width: 100%;
+                padding: 60px 28px 50px;
+                align-items: center;
+                text-align: center;
             }
+            .hero-tagline { max-width: 100%; }
+            .hero-ctas { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-right {
+                width: 100%;
+                height: 420px;
+            }
+            .hero-right::before { display: none; }
             .hero-headline {
-                font-size: clamp(2.2rem, 10vw, 3.2rem);
+                font-size: clamp(2.2rem, 8vw, 3rem);
             }
         }
 
         @media (max-width: 480px) {
-            .hero-bg {
-                background-position: 65% center;
-            }
+            .hero-left { padding: 50px 20px 40px; }
             .hero-btn-primary,
             .hero-btn-secondary {
                 width: 100%;
@@ -256,8 +252,8 @@
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                max-width: 280px;
             }
+            .hero-right { height: 300px; }
         }
     </style>
 </head>
@@ -278,7 +274,7 @@
                 </nav>
 
                 <div class="hidden md:flex items-center">
-                    <a href="tel:0607118356" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-takediBlue hover:bg-takediBlue/90 transition-all shadow-md tracking-wider">
+                    <a href="tel:0607118356" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-takediBlue hover:bg-takediOrange transition-all shadow-md tracking-wider rounded-full">
                         <i class="fa-solid fa-phone mr-2"></i> 060 711 8356
                     </a>
                 </div>
