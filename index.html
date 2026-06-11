@@ -53,211 +53,276 @@
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14), 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== SPLIT HERO SECTION ===== */
         .hero-section {
             position: relative;
             width: 100%;
-            height: 100vh;
-            min-height: 680px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             overflow: hidden;
+            background: #040e1f;
         }
 
-        /* Full-bleed background image — ultra-high-res, sharp, no scaling artifacts */
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('https://i.postimg.cc/dQGrQL0N/outdoor.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
-        .hero-section:hover .hero-bg {
-            transform: none;
-        }
-
-        /* Deep cinematic overlay — navy at top, near-black at bottom */
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                160deg,
-                rgba(5, 25, 55, 0.72) 0%,
-                rgba(0, 0, 0, 0.55) 50%,
-                rgba(0, 0, 0, 0.78) 100%
-            );
-            z-index: 1;
-        }
-
-        /* Brand blue tint — low opacity stripe at bottom for continuity with rest of page */
-        .hero-tint {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 35%;
-            background: linear-gradient(
-                to top,
-                rgba(15, 93, 166, 0.30) 0%,
-                transparent 100%
-            );
-            z-index: 2;
-        }
-
-        /* Centered content stack */
-        .hero-content {
+        /* ---- Left panel: content ---- */
+        .hero-left {
             position: relative;
             z-index: 10;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0 1.5rem;
-            max-width: 900px;
-            width: 100%;
-            gap: 0;
+            justify-content: center;
+            padding: 80px 60px 80px 72px;
+            background: linear-gradient(120deg, #040e1f 60%, #081830 100%);
         }
 
-        /* Eyebrow badge */
-        .hero-badge {
+        /* Subtle grid texture on left */
+        .hero-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(15,93,166,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,93,166,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* Eyebrow tag */
+        .hero-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 6px 14px;
-            background: rgba(243, 112, 34, 0.18);
-            border: 1px solid rgba(243, 112, 34, 0.45);
+            background: rgba(243, 112, 34, 0.12);
+            border: 1px solid rgba(243, 112, 34, 0.35);
+            border-radius: 9999px;
             color: #ffb600;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 1.4rem;
-            backdrop-filter: blur(4px);
+            margin-bottom: 1.6rem;
+            width: fit-content;
+            animation: fadeSlideUp 0.6s ease both;
         }
-
-        .hero-badge-dot {
-            width: 7px;
-            height: 7px;
+        .hero-eyebrow-dot {
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: #f37022;
+            animation: pulseDot 2s ease-in-out infinite;
         }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.4); }
+        @keyframes pulseDot {
+            0%,100% { opacity:1; transform:scale(1); }
+            50% { opacity:0.4; transform:scale(1.5); }
         }
 
         /* Main headline */
         .hero-headline {
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-size: clamp(2.4rem, 4.2vw, 4.4rem);
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1.06;
             color: #ffffff;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+            letter-spacing: -0.025em;
+            margin-bottom: 1.4rem;
+            animation: fadeSlideUp 0.7s 0.1s ease both;
         }
-
         .hero-headline-accent {
             color: #f37022;
-            display: inline;
+        }
+        /* Typing cursor */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.85em;
+            background: #f37022;
+            margin-left: 4px;
+            vertical-align: middle;
+            border-radius: 2px;
+            animation: blinkCursor 0.9s step-end infinite;
+        }
+        @keyframes blinkCursor {
+            0%,100% { opacity:1; }
+            50% { opacity:0; }
         }
 
-        /* CTA buttons row */
+        /* Subtext */
+        .hero-subtext {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 440px;
+            margin-bottom: 2.4rem;
+            animation: fadeSlideUp 0.7s 0.2s ease both;
+        }
+
+        /* CTA buttons */
         .hero-ctas {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
+            gap: 0.9rem;
+            animation: fadeSlideUp 0.7s 0.3s ease both;
         }
-
         .hero-btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 2.4rem;
-            font-size: 0.95rem;
+            padding: 0.9rem 2.2rem;
+            font-size: 0.9rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.07em;
             color: #ffffff;
             background: #f37022;
             text-decoration: none;
             border: 2px solid #f37022;
             border-radius: 9999px;
             transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-            box-shadow: 0 8px 32px rgba(243, 112, 34, 0.45);
+            box-shadow: 0 8px 32px rgba(243,112,34,0.45);
         }
-
         .hero-btn-primary:hover {
             background: #d95f10;
             border-color: #d95f10;
             transform: translateY(-2px);
-            box-shadow: 0 14px 40px rgba(243, 112, 34, 0.55);
+            box-shadow: 0 14px 40px rgba(243,112,34,0.55);
         }
-
         .hero-btn-secondary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 2.4rem;
-            font-size: 0.95rem;
+            padding: 0.9rem 2.2rem;
+            font-size: 0.9rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.07em;
             color: #ffffff;
-            background: rgba(255,255,255,0.10);
-            border: 2px solid rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.35);
             border-radius: 9999px;
             text-decoration: none;
             backdrop-filter: blur(6px);
             transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
         }
-
         .hero-btn-secondary:hover {
-            background: rgba(255,255,255,0.20);
-            border-color: rgba(255,255,255,0.90);
+            background: rgba(255,255,255,0.16);
+            border-color: rgba(255,255,255,0.75);
             transform: translateY(-2px);
         }
 
-        /* Mobile & tablet image optimisation */
-        @media (max-width: 1024px) {
-            .hero-bg {
-                background-position: center top;
-            }
+        /* Stats row */
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            animation: fadeSlideUp 0.7s 0.45s ease both;
+        }
+        .hero-stat-num {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #f37022;
+            line-height: 1;
+        }
+        .hero-stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
         }
 
+        /* ---- Right panel: image ---- */
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right-img {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://i.postimg.cc/dQGrQL0N/outdoor.jpg');
+            background-size: cover;
+            background-position: center center;
+            animation: heroImgZoom 12s ease-in-out infinite alternate;
+        }
+        @keyframes heroImgZoom {
+            from { transform: scale(1); }
+            to   { transform: scale(1.06); }
+        }
+        /* Left-edge gradient blend into dark left panel */
+        .hero-right-fade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #040e1f 0%, rgba(4,14,31,0.5) 28%, transparent 55%);
+            z-index: 1;
+        }
+        /* Subtle bottom vignette */
+        .hero-right-vignette {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(4,14,31,0.55) 100%);
+            z-index: 2;
+        }
+        /* Floating accent badge on image side */
+        .hero-img-badge {
+            position: absolute;
+            bottom: 48px;
+            right: 36px;
+            z-index: 10;
+            background: rgba(15,93,166,0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 14px 20px;
+            text-align: center;
+            animation: fadeSlideUp 0.8s 0.5s ease both;
+        }
+        .hero-img-badge-num {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .hero-img-badge-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 4px;
+        }
+
+        /* Shared entrance animation */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 1024px) {
+            .hero-left { padding: 70px 44px 70px 44px; }
+        }
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 100svh;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 340px;
+                min-height: unset;
             }
-            .hero-bg {
-                background-position: 60% center;
+            .hero-left {
+                padding: 60px 24px 48px;
+                order: 1;
             }
-            .hero-headline {
-                font-size: clamp(2.2rem, 10vw, 3.2rem);
+            .hero-right { order: 2; }
+            .hero-right-fade {
+                background: linear-gradient(to bottom, #040e1f 0%, transparent 40%);
             }
+            .hero-headline { font-size: clamp(2rem, 9vw, 3rem); }
+            .hero-stats { gap: 1.8rem; }
+            .hero-img-badge { bottom: 24px; right: 20px; }
         }
-
         @media (max-width: 480px) {
-            .hero-bg {
-                background-position: 65% center;
-            }
-            .hero-btn-primary,
-            .hero-btn-secondary {
-                width: 100%;
-                padding: 0.9rem 1.5rem;
-            }
-            .hero-ctas {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                max-width: 280px;
-            }
+            .hero-btn-primary, .hero-btn-secondary { width: 100%; justify-content: center; }
+            .hero-ctas { flex-direction: column; }
+            .hero-stats { gap: 1.4rem; }
         }
     </style>
 </head>
@@ -278,7 +343,7 @@
                 </nav>
 
                 <div class="hidden md:flex items-center">
-                    <a href="tel:0607118356" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-takediBlue hover:bg-takediBlue/90 transition-all shadow-md tracking-wider">
+                    <a href="tel:0607118356" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-takediBlue hover:bg-takediBlue/90 transition-all shadow-md tracking-wider rounded-full">
                         <i class="fa-solid fa-phone mr-2"></i> 060 711 8356
                     </a>
                 </div>
@@ -303,30 +368,28 @@
     </header>
 
     <main>
-        <!-- HERO: Full-viewport image fill with centered content -->
+        <!-- HERO: Split layout — text left, image right -->
         <section id="home" class="hero-section">
-            <!-- Background image layer -->
-            <div class="hero-bg"></div>
-            <!-- Multi-layer overlay for depth and legibility -->
-            <div class="hero-overlay"></div>
-            <!-- Subtle blue brand tint at bottom -->
-            <div class="hero-tint"></div>
 
-            <!-- Centered content -->
-            <div class="hero-content">
-                <!-- Eyebrow badge -->
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Premium Branding Solutions
+            <!-- LEFT: Content panel -->
+            <div class="hero-left">
+                <!-- Eyebrow -->
+                <div class="hero-eyebrow">
+                    <span class="hero-eyebrow-dot"></span>
+                    Mokopane, Limpopo
                 </div>
 
-                <!-- Headline -->
-                <h1 class="hero-headline">
-                    MODERN PRINTERS<br>
-                    <span class="hero-headline-accent">&amp; SUPPLY</span>
+                <!-- Typed headline -->
+                <h1 class="hero-headline" id="heroHeadline">
+                    <span id="heroTyped"></span><span class="typing-cursor" id="heroCursor"></span>
                 </h1>
 
-                <!-- CTA buttons -->
+                <!-- Subtext -->
+                <p class="hero-subtext">
+                    From large-format banners and vehicle wraps to mine signage and shop branding — we deliver bold print at every scale.
+                </p>
+
+                <!-- CTAs -->
                 <div class="hero-ctas">
                     <a href="#pricing" class="hero-btn-primary">
                         View Our Pricing
@@ -335,7 +398,36 @@
                         Explore Services
                     </a>
                 </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">10+</div>
+                        <div class="hero-stat-label">Services</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">48hr</div>
+                        <div class="hero-stat-label">Turnaround</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">100%</div>
+                        <div class="hero-stat-label">SA Made</div>
+                    </div>
+                </div>
             </div>
+
+            <!-- RIGHT: Image panel -->
+            <div class="hero-right">
+                <div class="hero-right-img"></div>
+                <div class="hero-right-fade"></div>
+                <div class="hero-right-vignette"></div>
+                <!-- Floating badge -->
+                <div class="hero-img-badge">
+                    <div class="hero-img-badge-num">R 1 300</div>
+                    <div class="hero-img-badge-label">Starting From</div>
+                </div>
+            </div>
+
         </section>
 
         <!-- ===== SERVICES SECTION (Redesigned) ===== -->
@@ -354,7 +446,8 @@
                     <div class="svc-rule" aria-hidden="true"></div>
                 </div>
 
-                <!-- 10-service grid: 5 cols desktop / 3 tablet / 2 phablet / 1 mobile -->
+                <!-- Infinite horizontal scroll -->
+                <div class="svc-scroll-wrapper">
                 <div class="svc-grid" id="svcGrid">
 
                     <!-- 1. Large Format Printing -->
@@ -500,6 +593,7 @@
                     </div>
 
                 </div><!-- /svc-grid -->
+                </div><!-- /svc-scroll-wrapper -->
 
                 <!-- CTA pill -->
                 <div class="svc-cta-row">
@@ -587,27 +681,31 @@
             margin: 0 auto;
         }
 
-        /* Grid */
+        /* Grid → infinite horizontal scroll marquee */
+        .svc-scroll-wrapper {
+            position: relative;
+            overflow: hidden;
+            /* fade edges */
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
         .svc-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            display: flex;
             gap: 20px;
+            width: max-content;
+            animation: svcMarquee 28s linear infinite;
+            padding: 12px 0 20px;
         }
-        @media (max-width: 1200px) {
-            .svc-grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+        .svc-grid:hover {
+            animation-play-state: paused;
         }
-        @media (max-width: 960px) {
-            .svc-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        @keyframes svcMarquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
         }
-        @media (max-width: 600px) {
-            .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-        }
-        @media (max-width: 380px) {
-            .svc-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Card */
         .svc-card {
+            flex: 0 0 220px;
+            width: 220px;
             background: #ffffff;
             border: 1px solid rgba(0,0,0,0.07);
             border-radius: 20px;
@@ -1332,6 +1430,7 @@
     </footer>
 
     <script>
+        /* ---- Mobile menu toggle ---- */
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if(menu.classList.contains('hidden')) {
@@ -1340,6 +1439,69 @@
                 menu.classList.add('hidden');
             }
         }
+
+        /* ---- Typing effect for hero headline ---- */
+        (function() {
+            const lines = [
+                { text: 'MODERN PRINTERS', accent: false },
+                { text: '& SUPPLY',        accent: true  }
+            ];
+            const el     = document.getElementById('heroTyped');
+            const cursor = document.getElementById('heroCursor');
+            if (!el) return;
+
+            let lineIdx = 0, charIdx = 0;
+            let fullText = '';
+            const charDelay = 55;
+            const linePause = 320;
+
+            function type() {
+                const line = lines[lineIdx];
+                if (charIdx <= line.text.length) {
+                    const segment = line.text.slice(0, charIdx);
+                    let html = '';
+                    // Build all previous lines
+                    for (let i = 0; i < lineIdx; i++) {
+                        if (lines[i].accent) {
+                            html += '<span class="hero-headline-accent">' + lines[i].text + '</span>';
+                        } else {
+                            html += lines[i].text;
+                        }
+                        html += '<br>';
+                    }
+                    // Current partial line
+                    if (line.accent) {
+                        html += '<span class="hero-headline-accent">' + segment + '</span>';
+                    } else {
+                        html += segment;
+                    }
+                    el.innerHTML = html;
+                    charIdx++;
+                    setTimeout(type, charDelay);
+                } else if (lineIdx < lines.length - 1) {
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(type, linePause);
+                } else {
+                    // Done — hide cursor after a beat
+                    setTimeout(() => { if (cursor) cursor.style.display = 'none'; }, 1800);
+                }
+            }
+            // Small initial delay for page load feel
+            setTimeout(type, 400);
+        })();
+
+        /* ---- Duplicate service cards for seamless marquee loop ---- */
+        (function() {
+            const grid = document.getElementById('svcGrid');
+            if (!grid) return;
+            const origCards = Array.from(grid.children);
+            origCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                grid.appendChild(clone);
+            });
+        })();
     </script>
 </body>
 </html>
